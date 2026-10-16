@@ -24,6 +24,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+double calc_area(double a, double b);
+double calc_perimeter(double a, double b);
+
 int main()
 {
     double a, b, area, perimeter;
@@ -35,14 +38,28 @@ int main()
     puts("Введите сторону B");
     scanf("%lf", &b);
 
-    area = a * b;
-    perimeter = 2 * (a + b);
+    area = calc_area(a, b);
+    perimeter = calc_perimeter(a, b);
 
     printf("Площадь = %.2f\n", area);
     printf("Периметр = %.2f\n", perimeter);
 
     system("pause");
     return 0;
+}
+
+double calc_area(double a, double b)
+{
+    double area;
+    area = a * b;
+    return area;
+}
+
+double calc_perimeter(double a, double b)
+{
+    double perimeter;
+    perimeter = 2 * (a + b);
+    return perimeter;
 }
 ```
 
